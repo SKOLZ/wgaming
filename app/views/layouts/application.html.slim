@@ -1,0 +1,41 @@
+doctype html
+html
+  head
+    title WGaming
+    meta charset="utf-8" /
+    meta content="width=device-width, initial-scale=1.0" name="viewport" /
+    = stylesheet_link_tag 'application'
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
+  body
+    nav.navbar.navbar-fixed-top role="navigation"
+      .navbar-header
+        button.navbar-toggle data-target=".navbar-collapse" data-toggle="collapse" type="button"
+          span.sr-only Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+      .collapse.navbar-collapse
+        ul.nav.navbar-nav
+          - if current_user
+            li
+              = current_user.email
+            li
+              = link_to t('navigation.log_out'), destroy_user_session_path,  method: :delete
+          - else 
+            li
+              = link_to t('navigation.log_in'), new_user_session_path
+            li
+              = link_to t('navigation.register'), new_user_registration_path
+        ul.nav.navbar-nav.navbar-right
+          li
+            a href="#main-section"
+              = t('landing.home')
+          li
+            a href="#features-section"
+              = t('landing.past_events')
+          li
+            a href="#app-section"
+              = t('landing.gameChampions')
+    .content
+      = yield

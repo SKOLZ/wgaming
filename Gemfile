@@ -30,6 +30,9 @@ gem 'loadjs'
 
 gem 'devise'
 
+gem 'carrierwave'
+gem 'mini_magick'
+
 gem 'foundation-rails'
 
 gem 'responders', '2.0'

@@ -6,6 +6,17 @@ en:
     created: Exception requested
     thank_you: Whackathon 2015
     already_requested: Already requested exception
+  title: 'Stormtek'
+  games:
+    title: 'Games'
+  tournaments:
+    title: 'Tournaments'
+    empty: 'No participants yet.'
+    participate: 'Enter the challenge'
+  join_us:
+    title: 'Join us'
+    subtitle: "Participate in Stormtek's upcoming editon and enjoy a real LAN party!"
+    participate: 'Participate'
   projects:
     name: Projects
     technologies: Technologies
@@ -23,3 +34,8 @@ en:
   navigation:
     back: Back
     log_out: Log out
+    log_in: 'Log in'
+    register: 'Register'
+    home: 'home'
+    past_events: 'Past events'
+    game_champions: 'Game champions'

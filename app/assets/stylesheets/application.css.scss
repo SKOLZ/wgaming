@@ -1,11 +1,12 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-@import "externals/bootstrap_and_overrides";
 @import "variables/colors";
+@import "externals/bootstrap_and_overrides";
 @import "mixins/glitch_mixin";
 @import "commons";
 
 @import "events/show";
+@import "sessions/sessions";
 
 

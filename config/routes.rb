@@ -5,5 +5,8 @@ Rails.application.routes.draw do
   root to: "events#main"
 
   resources :events, only: [:index, :show] do
+    # members do
+    #   post :participate
+    # end
   end
 end

@@ -1,0 +1,18 @@
+.login-container
+  h1.center-text
+    = t('navigation.log_in')
+  .separator.separator-headline
+  = form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'login-form' }) do |f|
+    = devise_error_messages!
+    .input-wrapper.input-email
+      = f.email_field :email
+      = f.label :email
+    .input-wrapper.input-password
+      = f.password_field :password
+      = f.label :password
+    - if devise_mapping.rememberable?
+     .checkbox-wrapper
+        = f.check_box :remember_me
+        = f.label :remember_me 
+    .actions
+      = f.submit t('navigation.log_in'), class: 'button btn-pink'

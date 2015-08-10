@@ -1,3 +1,26 @@
 .navbar-right {
   margin: 0;
 }
+
+.nav > li > a:hover, .nav > li > a:focus {
+  background-color: transparent;
+}
+
+.navbar {
+  transition: background 0.5s;
+}
+
+@media (min-width: 768px) {
+  .navbar-nav > li > a {
+    padding-top: 0;
+    padding-bottom: 0;  
+    line-height: 50px;
+  }
+}
+
+// .navbar {
+//   background: -webkit-linear-gradient(left, $translucent-black, transparent 30%, transparent 70%, $translucent-black);
+//   background: -o-linear-gradient(right, $translucent-black, transparent 30%, transparent 70%, $translucent-black);
+//   background: -moz-linear-gradient(right, $translucent-black, transparent 30%, transparent 70%, $translucent-black);
+//   background: linear-gradient(to right, $translucent-black, transparent 30%, transparent 70%, $translucent-black);
+// }

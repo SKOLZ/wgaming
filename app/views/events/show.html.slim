@@ -2,32 +2,55 @@ section.section-header
   .overlay
   .title-container.center-text
     h1.h1-main-overlay
-      | stormtek
+      = t('title')
+      span.small-text
+        | v#{@event.id}.0
     h1.h1-main-overlay
-      | v#{@event.id}.0
+      = @event.event_date.strftime("%d.%m.%y")
+  button.btn-header.btn-pink
+    = t('join_us.participate')
 section.section-event-games
   h1.center-text
-    | Games
-  .games
+    = t('games.title')
+  .separator.separator-headline
+  .games.items-container
     - @event.games.each do |g|
       .game
-        h1.h1-game
-         = g.name
-         = image_tag(g.image)
+        .game-overlay
+          h1.h1-game
+           = g.name
+        = image_tag(g.image)
 section.section-event-tournaments
   h1.center-text
-    | Tournaments
-  .tournaments
+    = t('tournaments.title')
+  .separator.separator-headline
+  .tournaments.items-container
     - @event.tournaments.each do |t|
       .tournament
-        h1.h1-tournament
+        p.p-tournament-game
           = t.game.name
-        h2.h2-tournament
-          = t.description  
+        h1.h1-tournament
+          = t.title
+        p.p-tournament
+          = t.description
+        .separator.separator-tournament
+        - if @event.users.empty?
+          h2.h2-empty-tournament.center-text
+            = t('tournaments.empty')
+        - else 
+          ul.tournament-user-list
+            - @event.users.each do |u|
+              li
+                = u.email
+        .separator.separator-tournament
+        button.center-block
+          = t('tournaments.participate')
 section.section-join
   h1.center-text
-    | Join us!
-  h2
-    | giladita giladita banda de gilada
-  button
-    | participate
+      = t('join_us.title')
+  .separator.separator-headline
+  .join-content.center-text
+    h2.h2-join
+      = t('join_us.subtitle')
+    button
+      = t('join_us.participate')

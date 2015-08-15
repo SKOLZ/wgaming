@@ -28,15 +28,26 @@ label {
   color: $light-blue;
 }
 
+ul {
+  padding: 0 10px;
+  margin: 0;
+
+  li {
+    list-style: none;
+    font-size: 14px;
+  }
+}
+
 p {
-  font-size: 14px;
+  font-size: 16px;
+  line-height: 16px;
   font-weight: 400;
   color: $light-blue;
 }
 
 a {
   color: $light-blue;
-  
+
   &:hover {
     color: $pink;
     text-decoration: none;
@@ -75,25 +86,39 @@ button, .button {
   height: 34px;
   line-height: 29px;
   padding: 0 10px;
-  border: 1px solid $green-blue;
-  background: transparent;
-  color: $green-blue;
+  background: $green-blue;
+  color: $light-blue;
 
-  &:hover {
-    background: $green-blue;
-    color: $light-blue;
+  &.blue-text {
+    color: $blue;
   }
-}
 
-.btn-pink {
-  border: 1px solid $pink;
-  color: $pink;
-
-  &:hover {
+  &.btn-pink {
     background: $pink;
     color: $dark-violet;
+
+    &:hover {
+      border: 1px solid $pink;
+      color: $pink;
+    }
   }
+
+  &.btn-big {
+    height: 50px;
+    font-size: 24px;
+    line-height: 50px;
+    padding: 0 50px;
+  }
+
+  &:hover {
+    border: 1px solid $green-blue;
+    background: transparent;
+    color: $green-blue;
+  }
+
+
 }
+
 
 section {
   min-height: 100%;
@@ -159,12 +184,12 @@ section {
     border: none;
     color: $green-blue;
     padding: 15px 10px 5px 10px;
-    
+
     &:focus {
       outline: none;
 
     }
-    
+
     &.filled-input + label {
       top: 5px;
       left: 5px;
@@ -254,23 +279,45 @@ section {
   padding: 25px 20px 20px 20px;
   border-radius: 4px;
 
-  .p-tournament-game {
+  .tournament-participants-container {
     position: absolute;
     right: 10px;
-    top: 5px;
-    color: $green-blue;
+    top: 10px;
+
+    .img-participants {
+      display: inline-block;
+      vertical-align: middle;
+      height: 15px;
+      width: 15px;
+      margin-right: 5px;
+    }
+
+    .p-tournament-participants {
+      display: inline-block;
+      vertical-align: middle;
+      color: $pink;
+      font-size: 14px;
+      line-height: 14px;
+      font-weight: bold;
+    }
   }
 
   .h1-tournament {
     font-weight: bold;
     color: $dark-violet;
     font-size: 30px;
-    margin-bottom: 10px;
+  }
+
+  .p-tournament-game {
+    color: $green-blue;
+    margin-bottom: 15px;
+    font-size: 14px;
   }
 
   .p-tournament {
     color: $dark-violet;
     margin-bottom: 10px;
+    line-height: 18px;
   }
 
   .h2-empty-tournament {

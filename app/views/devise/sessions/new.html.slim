@@ -3,7 +3,8 @@
     = t('navigation.log_in')
   .separator.separator-headline
   = form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'login-form' }) do |f|
-    = devise_error_messages!
+    - flash.each do |name, msg|
+      = content_tag :div, msg, class: name
     .input-wrapper.input-email
       = f.email_field :email
       = f.label :email

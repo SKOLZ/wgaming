@@ -13,20 +13,17 @@ en:
     title: 'Tournaments'
     empty: 'No participants yet.'
     participate: 'Enter the challenge'
+    stop_participating: 'Abandon the challenge'
   join_us:
     title: 'Join us'
     subtitle: "Participate in Stormtek's upcoming editon and enjoy a real LAN party!"
     participate: 'Participate'
-  projects:
-    name: Projects
-    technologies: Technologies
-    empty: No projects
-    organizer: Organizer
   participants:
     full: Full!
     name: Participants
-    empty: No participants yet
-    participate: Participate
+    empty: 'No participants yet'
+    participate: 'Participate'
+    stop_participating: "I'm not going"
     quit: Quit
     created: Participation registered
     destroyed: Participation cancelled

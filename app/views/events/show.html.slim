@@ -7,8 +7,10 @@ section.section-header
         | v#{@event.id}.0
     h1.h1-main-overlay
       = @event.event_date.strftime("%d.%m.%y")
-  button.btn-header.btn-pink
-    = t('join_us.participate')
+  - unless @event.participates?(current_user)
+    = link_to participate_event_path(params[:id]), method: :post
+      button.btn-header.btn-pink.btn-big
+        = t('join_us.participate')
 section.section-event-games
   h1.center-text
     = t('games.title')
@@ -27,24 +29,34 @@ section.section-event-tournaments
   .tournaments.items-container
     - @event.tournaments.each do |t|
       .tournament
-        p.p-tournament-game
-          = t.game.name
+        .tournament-participants-container
+          = image_tag "i_participants.png", class: 'img-participants'
+          p.p-tournament-participants
+            | #{t.users.count} / #{t.max_participants}
         h1.h1-tournament
           = t.title
+        p.p-tournament-game
+          = t.game.name
         p.p-tournament
           = t.description
         .separator.separator-tournament
-        - if @event.users.empty?
+        - if t.users.empty?
           h2.h2-empty-tournament.center-text
             = t('tournaments.empty')
-        - else 
+        - else
           ul.tournament-user-list
-            - @event.users.each do |u|
+            - t.users.each do |u|
               li
                 = u.email
         .separator.separator-tournament
-        button.center-block
-          = t('tournaments.participate')
+        - if t.participates?(current_user)
+          = link_to stop_participating_tournament_path(t.id), method: :delete do
+            button.center-block
+              = t('tournaments.stop_participating')
+        - else
+          = link_to participate_tournament_path(t.id), method: :post do
+            button.center-block
+              = t('tournaments.participate')
 section.section-join
   h1.center-text
       = t('join_us.title')
@@ -52,5 +64,11 @@ section.section-join
   .join-content.center-text
     h2.h2-join
       = t('join_us.subtitle')
-    button
-      = t('join_us.participate')
+    - if @event.participates?(current_user)
+      = link_to stop_participating_event_path(params[:id]), method: :delete
+        button.blue-text
+          = t('join_us.stop_participating')
+    - else
+      = link_to participate_event_path(params[:id]), method: :post
+            button.btn-big.blue-text
+              = t('join_us.participate')

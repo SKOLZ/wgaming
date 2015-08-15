@@ -5,8 +5,16 @@ Rails.application.routes.draw do
   root to: "events#main"
 
   resources :events, only: [:index, :show] do
-    # members do
-    #   post :participate
-    # end
+    member do
+      post :participate
+      delete :stop_participating
+    end
+  end
+
+  resources :tournaments, only: [] do
+    member do
+      post :participate
+      delete :stop_participating
+    end
   end
 end

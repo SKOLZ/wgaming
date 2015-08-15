@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    title 
+    title
       =t('title')
     meta charset="utf-8" /
     meta content="width=device-width, initial-scale=1.0" name="viewport" /
@@ -23,7 +23,7 @@ html
               = current_user.email
             li
               = link_to t('navigation.log_out'), destroy_user_session_path,  method: :delete, class: 'nav-link'
-          - else 
+          - else
             li
               = link_to t('navigation.log_in'), new_user_session_path, class: 'nav-link'
             li
@@ -31,9 +31,9 @@ html
         ul.nav.navbar-nav.navbar-right
           li
             = link_to t('navigation.home'), root_path, class: 'nav-link'
-          li
+          //li
             = link_to t('navigation.past_events'), events_path, class: 'nav-link'
-          li.nav-link
+          //li.nav-link
             = link_to t('navigation.game_champions'), root_path, class: 'nav-link'
     .content
       = yield

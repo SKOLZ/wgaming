@@ -16,7 +16,7 @@
   padding: 0;
   position: relative;
   background: asset-url('main_bg2.jpg');
-  background-size: cover; 
+  background-size: cover;
 }
 
 .btn-header {
@@ -24,4 +24,10 @@
   left: 50%;
   bottom: 60px;
   transform: translateX(-50%);
+}
+
+@media screen and (max-width: 768px) {
+  .games, .tournaments {
+    text-align: center;
+  }
 }

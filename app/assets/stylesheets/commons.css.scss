@@ -4,15 +4,15 @@ html, body, .content {
   height: 100%;
 }
 
-h1, h2, h3, h4, h5, h6, p, a, span, button, label {
+* {
   font-family: 'Josefin Sans', sans-serif;
-  margin: 0;
 }
 
 h1 {
   font-size: 60px;
   font-weight: 300;
   color: $light-blue;
+  margin: 0 0 5px 0;
 
   .small-text {
     font-size: 20px;
@@ -23,7 +23,7 @@ h2 {
 }
 
 label {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 300;
   color: $light-blue;
 }
@@ -34,7 +34,7 @@ ul {
 
   li {
     list-style: none;
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 
@@ -42,6 +42,7 @@ p {
   font-size: 16px;
   line-height: 16px;
   font-weight: 400;
+  margin: 0;
   color: $light-blue;
 }
 
@@ -66,7 +67,7 @@ a {
   color: $green-blue;
   line-height: 50px;
   padding: 0 15px;
-  font-size: 12px;
+  font-size: 16px;
 }
 
 .navbar-solid {
@@ -82,41 +83,47 @@ button, .button {
   text-transform: uppercase;
   font-size: 14px;
   border: none;
-  border-radius: 4px;
+  border-radius: 2px;
   height: 34px;
   line-height: 29px;
   padding: 0 10px;
   background: $green-blue;
   color: $light-blue;
 
-  &.blue-text {
+  &.btn-blue-text {
     color: $blue;
   }
 
-  &.btn-pink {
-    background: $pink;
+  &.btn-violet-text {
     color: $dark-violet;
-
-    &:hover {
-      border: 1px solid $pink;
-      color: $pink;
-    }
   }
 
   &.btn-big {
     height: 50px;
     font-size: 24px;
-    line-height: 50px;
+    line-height: 57px;
     padding: 0 50px;
+    &:hover {
+      line-height: 55px;
+    }
   }
 
   &:hover {
     border: 1px solid $green-blue;
     background: transparent;
     color: $green-blue;
+    line-height: 32px;
   }
 
+  &.btn-pink {
+    background: $pink;
 
+    &:hover {
+      border: 1px solid $pink;
+      color: $pink;
+      background: transparent;
+    }
+  }
 }
 
 
@@ -155,14 +162,19 @@ section {
   font-size: 0;
 }
 
+.img-logo-main {
+  max-width: 800px;
+  margin-bottom: 50px;
+}
+
 //inputs
 
 .input-wrapper {
-  height: 45px;
+  height: 60px;
   border: 1px solid $light-blue;
   margin-bottom: 20px;
   position: relative;
-  border-radius: 4px;
+  border-radius: 2px;
 
   label {
     position: absolute;
@@ -170,11 +182,7 @@ section {
     top: 50%;
     transform: translate(-50%, -50%);
     color: $light-blue;
-    transition: top 0.2s, left 0.2s, font-size 0.2s;
-
-    &:focus {
-      color: lime;
-    }
+    transition: top 0.2s, left 0.2s, font-size 0.2s, transform 0.2s;
   }
 
   input {
@@ -187,15 +195,14 @@ section {
 
     &:focus {
       outline: none;
-
     }
 
     &.filled-input + label {
       top: 5px;
       left: 5px;
-      font-size: 10px;
+      font-size: 12px;
       transform: translate(0, 0);
-      transition: top 0.2s, left 0.2s, font-size 0.2s;
+      transition: top 0.2s, left 0.2s, font-size 0.2s, transform 0.2s;
     }
   }
 }
@@ -289,7 +296,7 @@ section {
       vertical-align: middle;
       height: 15px;
       width: 15px;
-      margin-right: 5px;
+      margin-right: 10px;
     }
 
     .p-tournament-participants {
@@ -297,7 +304,7 @@ section {
       vertical-align: middle;
       color: $pink;
       font-size: 14px;
-      line-height: 14px;
+      line-height: 13px;
       font-weight: bold;
     }
   }

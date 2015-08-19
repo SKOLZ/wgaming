@@ -1,15 +1,12 @@
 section.section-header
   .overlay
   .title-container.center-text
-    h1.h1-main-overlay
-      = t('title')
-      span.small-text
-        | v#{@event.id}.0
+    = image_tag "i_participants", class: 'img-logo-main'
     h1.h1-main-overlay
       = @event.event_date.strftime("%d.%m.%y")
   - unless @event.participates?(current_user)
     = link_to participate_event_path(params[:id]), method: :post
-      button.btn-header.btn-pink.btn-big
+      button.btn-header.btn-pink.btn-big.btn-violet-text
         = t('join_us.participate')
 section.section-event-games
   h1.center-text
@@ -66,9 +63,9 @@ section.section-join
       = t('join_us.subtitle')
     - if @event.participates?(current_user)
       = link_to stop_participating_event_path(params[:id]), method: :delete
-        button.blue-text
+        button.blue-text.btn-blue-text
           = t('join_us.stop_participating')
     - else
       = link_to participate_event_path(params[:id]), method: :post
-            button.btn-big.blue-text
+            button.btn-big.btn-blue-text
               = t('join_us.participate')

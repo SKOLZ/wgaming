@@ -1,7 +1,7 @@
 section.section-header
   .overlay
   .title-container.center-text
-    = image_tag "i_participants", class: 'img-logo-main'
+    = image_tag "logo_main.png", class: 'img-logo-main'
     h1.h1-main-overlay
       = @event.event_date.strftime("%d.%m.%y")
   - unless @event.participates?(current_user)
